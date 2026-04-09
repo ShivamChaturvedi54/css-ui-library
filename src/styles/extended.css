@@ -1,0 +1,358 @@
+/* ----- PREMIUM COMPONENTS (REVERTED TO COLORFUL) ----- */
+
+/* 1. ui-btn-3d */
+.ui-btn-3d {
+  background: #ec4899;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 6px 0 #be185d;
+  transition: all 0.1s;
+  cursor: pointer;
+}
+.ui-btn-3d:active {
+  box-shadow: 0 2px 0 #be185d;
+  transform: translateY(4px);
+}
+
+/* 2. ui-btn-shimmer */
+.ui-btn-shimmer {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: #3b82f6;
+  border: none;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.ui-btn-shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 50%; height: 100%;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-20deg);
+  animation: shimmer 2s infinite;
+}
+@keyframes shimmer { 100% { left: 200%; } }
+
+/* 3. ui-btn-pulse */
+.ui-btn-pulse {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulseBtn 1.5s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+@keyframes pulseBtn {
+  to { box-shadow: 0 0 0 15px rgba(16, 185, 129, 0); }
+}
+
+/* 4. ui-btn-scan */
+.ui-btn-scan {
+  background: #111;
+  color: #0f0;
+  border: 1px solid #0f0;
+  padding: 12px 24px;
+  font-family: monospace;
+  font-size: 1rem;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+.ui-btn-scan::before {
+  content: '';
+  position: absolute;
+  top: -2px; left: -2px; right: -2px;
+  height: 2px; background: #0f0;
+  animation: scanline 2s linear infinite;
+  box-shadow: 0 0 10px #0f0;
+}
+@keyframes scanline { 100% { top: 100%; } }
+
+/* 5. ui-btn-pixel */
+.ui-btn-pixel {
+  background: transparent;
+  color: white;
+  border: 4px solid white;
+  padding: 10px 20px;
+  font-family: monospace;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: inset -4px -4px 0px 0px rgba(255,255,255,0.3);
+}
+.ui-btn-pixel:hover {
+  background: white;
+  color: black;
+}
+
+/* 6. ui-loader-ring */
+.ui-loader-ring {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  border-top-color: #8b5cf6;
+  border-bottom-color: #3b82f6;
+  animation: spinRing 1.5s ease-in-out infinite;
+}
+@keyframes spinRing { 100% { transform: rotate(360deg); } }
+
+/* 7. ui-loader-bounce */
+.ui-loader-bounce {
+  display: flex; gap: 4px; border: none;
+}
+.ui-loader-bounce div {
+  width: 8px; height: 24px; background: #ec4899;
+  animation: bounceBar 1s infinite alternate;
+}
+.ui-loader-bounce div:nth-child(2) { animation-delay: 0.2s; }
+.ui-loader-bounce div:nth-child(3) { animation-delay: 0.4s; }
+@keyframes bounceBar { 100% { transform: scaleY(2); } }
+
+/* 8. ui-loader-orbit */
+.ui-loader-orbit {
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  border: 1px dashed rgba(255,255,255,0.3);
+  position: relative;
+  animation: orbitSpin 4s linear infinite;
+}
+.ui-loader-orbit::after {
+  content: ''; position: absolute;
+  top: -5px; left: 20px; width: 10px; height: 10px;
+  background: #f59e0b; border-radius: 50%;
+  box-shadow: 0 0 10px #f59e0b;
+}
+@keyframes orbitSpin { 100% { transform: rotate(360deg); } }
+
+/* 9. ui-loader-heart */
+.ui-loader-heart {
+  display: inline-block; width: 30px; height: 30px;
+  background: #ef4444; position: relative;
+  transform: rotate(45deg);
+  animation: heartBeat 1s infinite;
+}
+.ui-loader-heart::before, .ui-loader-heart::after {
+  content: ''; position: absolute;
+  width: 30px; height: 30px; background: #ef4444; border-radius: 50%;
+}
+.ui-loader-heart::before { left: -15px; top: 0; }
+.ui-loader-heart::after { left: 0; top: -15px; }
+@keyframes heartBeat { 0%, 100% { transform: rotate(45deg) scale(1); } 50% { transform: rotate(45deg) scale(1.2); } }
+
+/* 10. ui-card-flip */
+.ui-card-flip-container {
+  perspective: 1000px; width: 200px; height: 200px;
+}
+.ui-card-flip {
+  width: 100%; height: 100%; position: relative;
+  transition: transform 0.6s; transform-style: preserve-3d;
+}
+.ui-card-flip-container:hover .ui-card-flip { transform: rotateY(180deg); }
+.ui-card-front, .ui-card-back {
+  position: absolute; width: 100%; height: 100%;
+  backface-visibility: hidden; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: bold; border: 1px solid var(--border-color);
+}
+.ui-card-front { background: var(--surface); color: white; }
+.ui-card-back { background: var(--primary); color: white; transform: rotateY(180deg); box-shadow: 0 0 20px var(--primary); }
+
+/* 11. ui-card-hologram */
+.ui-card-hologram {
+  width: 200px; height: 250px; background: #111;
+  border-radius: 12px; position: relative; overflow: hidden;
+  border: 1px solid #333; display: flex; align-items: center; justify-content: center;
+  color: white;
+}
+.ui-card-hologram::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 40%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.1) 60%, rgba(255,255,255,0) 100%);
+  transform: translateX(-150%) skewX(-20deg); transition: 0.5s;
+}
+.ui-card-hologram:hover::after { transform: translateX(150%) skewX(-20deg); }
+
+/* 12. ui-input-underline */
+.ui-input-underline {
+  border: none; background: transparent; padding: 10px 0;
+  color: white; font-size: 1rem; width: 100%; outline: none;
+  border-bottom: 1px solid #555; transition: 0.3s;
+}
+.ui-input-underline:focus { border-bottom: 2px solid #8b5cf6; }
+
+/* 13. ui-input-neumorphic */
+.ui-input-neumorphic {
+  background: #111; border: none; padding: 12px 20px;
+  border-radius: 50px; color: white;
+  box-shadow: inset 4px 4px 8px #000, inset -4px -4px 8px #222;
+  outline: none; width: 100%; transition: 0.2s;
+}
+.ui-input-neumorphic:focus { box-shadow: inset 6px 6px 12px #000, inset -6px -6px 12px #222; }
+
+/* 14. ui-input-glow */
+.ui-input-glow {
+  background: #000; border: 1px solid #333; padding: 12px 20px;
+  border-radius: 8px; color: white; outline: none; width: 100%;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+.ui-input-glow:focus { border-color: #ec4899; box-shadow: 0 0 15px rgba(236,72,153,0.5); }
+
+/* 15. ui-switch-cyber */
+.ui-switch-cyber {
+  appearance: none; width: 60px; height: 30px;
+  background: #222; border: 2px solid #555; border-radius: 0;
+  outline: none; cursor: pointer; position: relative; transition: 0.3s;
+}
+.ui-switch-cyber::before {
+  content: ''; position: absolute; width: 24px; height: 24px;
+  background: #555; top: 1px; left: 2px; transition: 0.3s;
+}
+.ui-switch-cyber:checked { background: #0f0; border-color: #0f0; box-shadow: 0 0 15px #0f0; }
+.ui-switch-cyber:checked::before { left: 30px; background: #000; }
+
+/* 16. ui-checkbox-heart */
+.ui-checkbox-heart {
+  appearance: none; width: 25px; height: 25px;
+  background: transparent; border: none; outline: none;
+  cursor: pointer; position: relative;
+}
+.ui-checkbox-heart::before {
+  content: '🤍'; font-size: 25px; position: absolute; top: -5px; left: 0; transition: 0.2s;
+}
+.ui-checkbox-heart:checked::before { content: '❤️'; transform: scale(1.2); filter: drop-shadow(0 0 5px red); }
+
+/* 17. ui-radio-square */
+.ui-radio-square {
+  appearance: none; width: 20px; height: 20px;
+  border: 2px solid #8b5cf6; background: transparent; cursor: pointer; position: relative; transition: 0.2s;
+}
+.ui-radio-square:checked { background: #8b5cf6; box-shadow: 0 0 10px #8b5cf6; transform: rotate(45deg); }
+
+/* 18. ui-badge-glitch (Improved) */
+.ui-badge-glitch {
+  background: #000;
+  color: #fff;
+  border: 1px solid #0ff;
+  padding: 4px 12px;
+  font-weight: 800;
+  font-size: 0.75rem;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.ui-badge-glitch::before,
+.ui-badge-glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #000;
+}
+
+.ui-badge-glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 #ff00c1;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.ui-badge-glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+  animation: glitch-anim-2 1s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% { clip: rect(31px, 9999px, 94px, 0); transform: skew(0.85deg); }
+  5% { clip: rect(70px, 9999px, 71px, 0); transform: skew(0.51deg); }
+  10% { clip: rect(62px, 9999px, 86px, 0); transform: skew(0.76deg); }
+  15% { clip: rect(57px, 9999px, 5px, 0); transform: skew(0.12deg); }
+  20% { clip: rect(34px, 9999px, 4px, 0); transform: skew(0.67deg); }
+  100% { clip: rect(10px, 9999px, 90px, 0); transform: skew(0.1deg); }
+}
+
+@keyframes glitch-anim-2 {
+  0% { clip: rect(65px, 9999px, 100px, 0); transform: skew(0.2deg); }
+  20% { clip: rect(15px, 9999px, 56px, 0); transform: skew(0.5deg); }
+  40% { clip: rect(85px, 9999px, 34px, 0); transform: skew(0.8deg); }
+  60% { clip: rect(45px, 9999px, 67px, 0); transform: skew(0.3deg); }
+  80% { clip: rect(25px, 9999px, 12px, 0); transform: skew(0.6deg); }
+  100% { clip: rect(95px, 9999px, 45px, 0); transform: skew(0.1deg); }
+}
+
+/* 19. ui-btn-glitch (New Ultimate Glitch) */
+.ui-btn-glitch {
+  --glitch-col: #f3f3f3;
+  width: 180px;
+  height: 50px;
+  background: #000;
+  border: 1px solid #ff003c;
+  color: #fff;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: 0.1s;
+}
+
+.ui-btn-glitch:hover {
+  background: #ff003c;
+  color: #000;
+  box-shadow: 0 0 15px #ff003c;
+}
+
+.ui-btn-glitch::before {
+  content: 'SYSTEM';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.ui-btn-glitch:hover::before {
+  animation: glitch-fast 0.2s infinite;
+}
+
+@keyframes glitch-fast {
+  0% { transform: translate(0); text-shadow: 2px 2px #00fff9, -2px -2px #ff00c1; }
+  25% { transform: translate(-5px, 5px); }
+  50% { transform: translate(5px, -5px); text-shadow: -2px -2px #00fff9, 2px 2px #ff00c1; }
+  75% { transform: translate(-3px, -3px); }
+  100% { transform: translate(0); }
+}
+
+/* 20. ui-loader-dots */
+.ui-loader-dots { display: flex; gap: 6px; }
+.ui-loader-dots div { width: 12px; height: 12px; background: #fff; border-radius: 50%; animation: jumpDot 0.6s infinite alternate; }
+.ui-loader-dots div:nth-child(2) { animation-delay: 0.2s; }
+.ui-loader-dots div:nth-child(3) { animation-delay: 0.4s; }
+@keyframes jumpDot { to { transform: translateY(-10px); } }
+
+/* 21. ui-btn-marquee */
+.ui-btn-marquee {
+  overflow: hidden; white-space: nowrap; width: 140px;
+  background: #111; color: white; border: 1px solid #333;
+  padding: 10px 0; border-radius: 50px; cursor: pointer; position: relative;
+}
+.ui-btn-marquee span {
+  display: inline-block; padding-left: 100%;
+  animation: marquee 3s linear infinite;
+}
+@keyframes marquee { 100% { transform: translate(-100%, 0); } }

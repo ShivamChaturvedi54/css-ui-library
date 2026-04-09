@@ -1,0 +1,75 @@
+/* UI Components Styles - REVERTED TO COLORFUL NEON */
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* 1. Button */
+.ui-btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.6rem 1.2rem; font-size: 0.9rem; font-weight: 600; border-radius: 8px; border: 1px solid transparent; cursor: pointer; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); background: var(--surface); color: var(--text-primary); gap: 0.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+.ui-btn:active { transform: scale(0.95); }
+.ui-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.ui-btn-primary { background: linear-gradient(135deg, #8b5cf6, #ec4899); color: white; border: none; }
+.ui-btn-primary:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4); }
+.ui-btn-outline { background: transparent; border: 1px solid var(--border-color); backdrop-filter: blur(4px); }
+.ui-btn-outline:hover:not(:disabled) { border-color: white; background: rgba(255,255,255,0.05); }
+.ui-btn-danger { background: linear-gradient(135deg, #ef4444, #b91c1c); color: white; }
+.ui-btn-ghost { background: transparent; box-shadow: none; }
+.ui-btn-ghost:hover:not(:disabled) { background: rgba(255, 255, 255, 0.1); }
+
+/* 2. Input */
+.ui-input { width: 100%; padding: 0.75rem 1rem; font-size: 0.95rem; border-radius: 8px; border: 1px solid var(--border-color); background: rgba(0,0,0,0.2); color: var(--text-primary); transition: all 0.2s; font-family: inherit; box-shadow: inset 0 2px 4px rgba(0,0,0,0.1); }
+.ui-input:focus { outline: none; border-color: #8b5cf6; box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.15); background: rgba(255,255,255,0.02); }
+
+/* 3. Card */
+.ui-card { background: rgba(24, 24, 27, 0.6); backdrop-filter: blur(10px); border-radius: 16px; border: 1px solid var(--border-color); padding: 1.5rem; box-shadow: 0 8px 30px rgba(0,0,0,0.4); transition: transform 0.2s; }
+.ui-card:hover { transform: translateY(-2px); border-color: rgba(255,255,255,0.1); }
+
+/* 4. Badge */
+.ui-badge { display: inline-flex; align-items: center; padding: 0.25rem 0.75rem; font-size: 0.75rem; font-weight: 700; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em; border: 1px solid transparent; }
+.ui-badge-primary { background: rgba(168, 85, 247, 0.15); color: #c084fc; border-color: rgba(168, 85, 247, 0.3); }
+.ui-badge-success { background: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.3); }
+.ui-badge-warning { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border-color: rgba(245, 158, 11, 0.3); }
+.ui-badge-danger { background: rgba(239, 68, 68, 0.15); color: #f87171; border-color: rgba(239, 68, 68, 0.3); }
+
+/* 5. Alert */
+.ui-alert { padding: 1.25rem; border-radius: 12px; border: 1px solid transparent; display: flex; align-items: center; gap: 1rem; font-size: 0.95rem; font-weight: 500; backdrop-filter: blur(5px); }
+.ui-alert-info { background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.3); color: #93c5fd; }
+.ui-alert-success { background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3); color: #6ee7b7; }
+.ui-alert-danger { background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.3); color: #fca5a5; }
+
+/* 6. Avatar */
+.ui-avatar { display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: linear-gradient(135deg, var(--border-color), var(--surface)); border: 2px solid var(--border-color); color: white; font-weight: 700; overflow: hidden; flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+.ui-avatar-sm { width: 2.25rem; height: 2.25rem; font-size: 0.875rem; }
+.ui-avatar-md { width: 3rem; height: 3rem; font-size: 1.1rem; }
+.ui-avatar-lg { width: 4rem; height: 4rem; font-size: 1.5rem; border-width: 3px; border-color: #8b5cf6; }
+
+/* 7. Checkbox */
+.ui-checkbox-wrapper { display: inline-flex; align-items: center; gap: 0.75rem; cursor: pointer; font-size: 0.95rem; font-weight: 500; }
+.ui-checkbox { width: 1.25rem; height: 1.25rem; border-radius: 6px; border: 2px solid var(--border-color); appearance: none; background: rgba(0,0,0,0.2); cursor: pointer; position: relative; display: inline-block; transition: all 0.2s; }
+.ui-checkbox:checked { background: #8b5cf6; border-color: #8b5cf6; box-shadow: 0 0 10px rgba(168, 85, 247, 0.5); }
+.ui-checkbox:checked::after { content: ''; position: absolute; top: 1px; left: 5px; width: 5px; height: 10px; border: solid white; border-width: 0 2.5px 2.5px 0; transform: rotate(45deg); display: block; }
+
+/* 8. Radio */
+.ui-radio-wrapper { display: inline-flex; align-items: center; gap: 0.75rem; cursor: pointer; font-size: 0.95rem; font-weight: 500; }
+.ui-radio { width: 1.25rem; height: 1.25rem; border-radius: 50%; border: 2px solid var(--border-color); appearance: none; background: rgba(0,0,0,0.2); cursor: pointer; position: relative; transition: all 0.2s; }
+.ui-radio:checked { background: transparent; border-color: #8b5cf6; box-shadow: 0 0 10px rgba(168, 85, 247, 0.3); }
+.ui-radio:checked::after { content: ''; position: absolute; top: 3px; left: 3px; width: 10px; height: 10px; border-radius: 50%; background: #8b5cf6; box-shadow: 0 0 8px #8b5cf6; }
+
+/* 9. Switch */
+.ui-switch { position: relative; display: inline-block; width: 48px; height: 28px; }
+.ui-switch input { opacity: 0; width: 0; height: 0; }
+.ui-switch-slider { position: absolute; cursor: pointer; inset: 0; background-color: rgba(255,255,255,0.1); border: 1px solid var(--border-color); transition: .4s; border-radius: 28px; }
+.ui-switch-slider:before { position: absolute; content: ""; height: 20px; width: 20px; left: 3px; bottom: 3px; background-color: white; transition: .4s cubic-bezier(0.4, 0, 0.2, 1); border-radius: 50%; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+.ui-switch input:checked + .ui-switch-slider { background-color: #8b5cf6; border-color: #8b5cf6; }
+.ui-switch input:checked + .ui-switch-slider:before { transform: translateX(20px); }
+
+/* 10. Spinner */
+.ui-spinner { width: 2rem; height: 2rem; border: 3px solid rgba(255,255,255,0.1); border-top-color: #8b5cf6; border-radius: 50%; animation: spin 1s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite; display: inline-block; filter: drop-shadow(0 0 5px rgba(168,85,247,0.5)); }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* 11. Tooltip */
+.ui-tooltip-container { position: relative; display: inline-block; }
+.ui-tooltip { visibility: hidden; font-size: 0.85rem; font-weight: 600; background-color: white; color: black; text-align: center; padding: 0.5rem 0.75rem; border-radius: 8px; position: absolute; z-index: 10; bottom: calc(100% + 10px); left: 50%; transform: translateX(-50%); opacity: 0; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); white-space: nowrap; pointer-events: none; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+.ui-tooltip::after { content: ""; position: absolute; top: 100%; left: 50%; margin-left: -5px; border-width: 5px; border-style: solid; border-color: white transparent transparent transparent; }
+.ui-tooltip-container:hover .ui-tooltip { visibility: visible; opacity: 1; bottom: calc(100% + 15px); }
